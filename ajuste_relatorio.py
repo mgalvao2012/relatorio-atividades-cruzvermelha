@@ -24,7 +24,7 @@ def upload_file():
             # Process the file
             try:
                 output_path = process_file(tmp_input.name)
-                return send_file(output_path, as_attachment=True, download_name='processed_' + file.filename)
+                return send_file(output_path, as_attachment=True, download_name=file.filename+'_ajustado')
             finally:
                 os.remove(tmp_input.name)
                 os.remove(output_path)
